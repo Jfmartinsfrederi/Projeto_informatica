@@ -1,0 +1,30 @@
+import React from "react";
+
+const ListaSuspensa = (props)=>{
+     const aoEscolhido = (evento) => {
+props.aoAlterado(evento.target.value)
+}
+
+
+    return(
+        <div className="lista-suspensa">
+            <label >{props.label}</label>
+            <select value={props.value} onChange={aoEscolhido}>
+                {props.itens.map(item=> <option key={item} value={item}>{item}</option> )}
+            </select>
+
+
+
+
+        </div>
+
+
+
+    )
+
+
+
+
+}
+
+export default ListaSuspensa;
