@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import CampoTexto from "../CampoTexto/CampoTexto";
-
-
+import CampoRadio from "../CampoRadio/CampoRadio";
+import Botao from "../Botao/Botao";
 
 const Formulario =(props)=>{
 
@@ -10,12 +10,36 @@ const Formulario =(props)=>{
     const [marca, setMarca]= useState('HP')
     const [nome, setNome]=useState('')
     const [preco, setPreco]=useState('')
+    const [opcao, setOpcao]=useState('')
+
+    const aoSalvar=(evento)=>{
+        evento.preventDefault();
+        const marcaCompleta = props.marcas.find(m => m.nome === marca);
+        props.aoProdutoCadastrado(
+            {
+                "secao":secao,
+                "marca":marcaCompleta.nome,
+                "imagem":marcaCompleta.imagem,
+                "nome":nome,
+                "preco":preco,
+                "opcao":opcao
+            }
+        )
+        setSecao('Computadores');
+        setMarca('HP')
+        setNome('');
+        setPreco('');
+        setOpcao('');
+
+    }
+
+    
 
 
 
     return(
        <section>
-        <form >
+        <form onSubmit={aoSalvar}>
 
             <h1>Cadastrar Produtos</h1>
              <ListaSuspensa
@@ -29,9 +53,10 @@ const Formulario =(props)=>{
              
              <ListaSuspensa
              label="Marcas"
-             itens={props.marcas}
+             itens={props.marcas.map(marca=>marca.nome)}
              value={marca}
              aoAlterado={valor=>setMarca(valor)}
+             
              
              />
 
@@ -50,6 +75,16 @@ const Formulario =(props)=>{
              aoAlterado={valor=>setPreco(valor)}
              
              />
+
+             <CampoRadio 
+             nome="Opção"
+             opcoes={["Novo","Usado"]}
+             valorSelecionado={opcao}
+             aoAlterado={valor=>setOpcao(valor)}
+
+             />
+             <Botao>Cadastrar Produto</Botao>
+             
 
             
         

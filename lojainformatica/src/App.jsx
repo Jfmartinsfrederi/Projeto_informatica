@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Banner from './Components/Banner/Banner'
 import Formulario from './Components/Formulario/Formulario'
+import Area from "./Components/Area/Area";
+
 
 function App() {
   const secoes= [
@@ -23,30 +25,57 @@ function App() {
   ];
 const marcas=[
   {
-    nome: 'HP'
+    nome: 'HP',
+    imagem:'Asus.png'
+    
   },
   {
-    nome: 'Dell'
+    nome: 'Dell',
+    imagem:'Dell'
   },
   {
-    nome: 'Positivo'
+    nome: 'Positivo',
+    imagem:'Positivo'
   },
   {
-    nome: 'Asus'
+    nome: 'Asus',
+    imagem:'Asus'
   },
   {
-    nome: 'Xing Ling Genérico'
+    nome: 'Xing Ling Genérico',
+    imagem:'xing'
   },
 
 ]
 
+ 
+
  const listSecoes=secoes.map(secao=>secao.nome);
- const listMarcas=marcas.map(marca=>marca.nome);
+ 
+ 
+ const [produtos,setProdutos] = useState([])
+
+const adicionaProd=(prod)=>{
+  console.log(prod)
+  const listaNova=produtos.slice();
+  listaNova.push(prod)
+  setProdutos(listaNova)
+  console.log(listaNova)
+
+  
+}
+
   
   return (
     <div>
       <Banner/>
-      <Formulario secoes={listSecoes} marcas={listMarcas}/>
+      <Formulario secoes={listSecoes} marcas={marcas} aoProdutoCadastrado={prod=>adicionaProd(prod)}/>
+      {secoes.map(secao=> <Area
+      key={secao.nome}
+      produtos={produtos.filter(prod=> prod.secao===secao.nome)}
+      
+      />)}
+
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from "react";
 
 const ListaSuspensa = (props)=>{
      const aoEscolhido = (evento) => {
+        
 props.aoAlterado(evento.target.value)
 }
 
