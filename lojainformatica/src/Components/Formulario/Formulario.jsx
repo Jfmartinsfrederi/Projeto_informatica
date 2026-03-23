@@ -3,6 +3,7 @@ import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import CampoTexto from "../CampoTexto/CampoTexto";
 import CampoRadio from "../CampoRadio/CampoRadio";
 import Botao from "../Botao/Botao";
+import "./Formulario.css"
 
 const Formulario =(props)=>{
 
@@ -11,6 +12,15 @@ const Formulario =(props)=>{
     const [nome, setNome]=useState('')
     const [preco, setPreco]=useState('')
     const [opcao, setOpcao]=useState('')
+
+    const aoAlterarPreco=(valor)=>{
+        if (valor==="" || Number(valor)>0){
+            setPreco(valor);
+        }
+
+    }
+
+
 
     const aoSalvar=(evento)=>{
         evento.preventDefault();
@@ -38,10 +48,10 @@ const Formulario =(props)=>{
 
 
     return(
-       <section>
-        <form onSubmit={aoSalvar}>
+       <section className="form-section">
+        <form className="form-container" onSubmit={aoSalvar}>
 
-            <h1>Cadastrar Produtos</h1>
+            <h1 className="form-titulo">Cadastrar Produtos</h1>
              <ListaSuspensa
              label="Seções"
              itens={props.secoes}
@@ -62,6 +72,7 @@ const Formulario =(props)=>{
 
              <CampoTexto 
              label="Nome:"
+             tipo="input"
              placeholder="Insira o nome do produto:"
              value={nome}
              aoAlterado={valor=>setNome(valor)}
@@ -70,9 +81,11 @@ const Formulario =(props)=>{
 
               <CampoTexto 
              label="Preço:"
+             
+             tipo="number"
              placeholder="Insira o preço do produto:"
              value={preco}
-             aoAlterado={valor=>setPreco(valor)}
+             aoAlterado={aoAlterarPreco}
              
              />
 
@@ -81,9 +94,10 @@ const Formulario =(props)=>{
              opcoes={["Novo","Usado"]}
              valorSelecionado={opcao}
              aoAlterado={valor=>setOpcao(valor)}
+             required
 
              />
-             <Botao>Cadastrar Produto</Botao>
+             <Botao className="btn-submit" >Cadastrar Produto</Botao>
              
 
             

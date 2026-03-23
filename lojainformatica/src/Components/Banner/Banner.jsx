@@ -4,7 +4,7 @@ function Banner(){
 
     return (
     <header className="banner">
-        <img src="/imagens/bannerifsp.png" alt="imagem aerea" />
+        <img src="/imagens/Mercador.png" alt="imagem aerea" />
         </header>);
 }
 

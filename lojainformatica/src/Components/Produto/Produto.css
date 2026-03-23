@@ -1,0 +1,70 @@
+/* CARD PRINCIPAL */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* HOVER (efeito levantar) */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* CONTAINER DA IMAGEM */
+.card-img {
+  margin-bottom: 15px;
+}
+
+/* IMAGEM */
+.card-img img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+/* CONTEÚDO */
+.card-content h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2d3436;
+}
+
+/* PREÇO (destaque) */
+.card-content h5 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00b894;
+  margin-bottom: 8px;
+}
+
+/* CONDIÇÃO */
+.card-content h6 {
+  font-size: 14px;
+  color: #636e72;
+  margin-bottom: 15px;
+}
+
+/* BOTÃO REMOVER */
+.btn-remover {
+  background: linear-gradient(45deg, #ff0000, #af3700);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* HOVER BOTÃO */
+.btn-remover:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

@@ -1,0 +1,9 @@
+/* estilo base (sempre aplicado) */
+.botao {
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+

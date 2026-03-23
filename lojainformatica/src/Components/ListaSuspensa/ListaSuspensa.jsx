@@ -10,7 +10,7 @@ props.aoAlterado(evento.target.value)
     return(
         <div className="lista-suspensa">
             <label >{props.label}</label>
-            <select value={props.value} onChange={aoEscolhido}>
+            <select value={props.value} onChange={aoEscolhido} required >
                 {props.itens.map(item=> <option key={item} value={item}>{item}</option> )}
             </select>
 

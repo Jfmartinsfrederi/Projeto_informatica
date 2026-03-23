@@ -13,10 +13,11 @@ const CampoRadio=(props)=>{
             {props.opcoes.map(opcao=>(
             <label key={opcao}>
                 <input type="radio"
-                
+                name={props.nome}
                 value={opcao}
                 checked={props.valorSelecionado===opcao}
                 onChange={aoSelecionado}
+                required
 
                 
                 />

@@ -26,24 +26,24 @@ function App() {
 const marcas=[
   {
     nome: 'HP',
-    imagem:'Asus.png'
+    imagem:'./public/imagens/Marcas/HP.png'
     
   },
   {
     nome: 'Dell',
-    imagem:'Dell'
+    imagem:'./public/imagens/Marcas/Dell.png'
   },
   {
     nome: 'Positivo',
-    imagem:'Positivo'
+    imagem:'./public/imagens/Marcas/Positivo.png'
   },
   {
     nome: 'Asus',
-    imagem:'Asus'
+    imagem:'./public/imagens/Marcas/Asus.png'
   },
   {
     nome: 'Xing Ling Genérico',
-    imagem:'xing'
+    imagem:'./public/imagens/Marcas/Xing.png'
   },
 
 ]
@@ -65,6 +65,11 @@ const adicionaProd=(prod)=>{
   
 }
 
+const removerProduto = (nome) => {
+  setProdutos(produtos.filter(prod => prod.nome !== nome));
+};
+
+
   
   return (
     <div>
@@ -72,7 +77,9 @@ const adicionaProd=(prod)=>{
       <Formulario secoes={listSecoes} marcas={marcas} aoProdutoCadastrado={prod=>adicionaProd(prod)}/>
       {secoes.map(secao=> <Area
       key={secao.nome}
+      nome={secao.nome}
       produtos={produtos.filter(prod=> prod.secao===secao.nome)}
+      aoRemover={removerProduto}
       
       />)}
 

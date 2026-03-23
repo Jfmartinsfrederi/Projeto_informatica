@@ -11,9 +11,10 @@ const CampoTexto= (props)=>{
     return (
         <div >
             <label >{props.label}</label>
-            <input value={props.value}
+            <input type={props.tipo} value={props.value}
             onChange={aoDigitado}
-            placeholder={props.placeholder} />
+            placeholder={props.placeholder} 
+            required />
 
 
 

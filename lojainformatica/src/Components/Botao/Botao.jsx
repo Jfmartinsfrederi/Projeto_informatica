@@ -1,8 +1,9 @@
 import React from "react";
+ import "./Botao.css"
 
 const Botao=(props)=>{
     return(
-        <button>
+        <button className={props.className} onClick={props.aoClicar}>
             {props.children}
         </button>
     )
