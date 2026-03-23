@@ -26,24 +26,24 @@ function App() {
 const marcas=[
   {
     nome: 'HP',
-    imagem:'./public/imagens/Marcas/HP.png'
+    imagem:'/public/imagens/Marcas/HP.png'
     
   },
   {
     nome: 'Dell',
-    imagem:'./public/imagens/Marcas/Dell.png'
+    imagem:'public/imagens/Marcas/Dell.png'
   },
   {
     nome: 'Positivo',
-    imagem:'./public/imagens/Marcas/Positivo.png'
+    imagem:'/public/imagens/Marcas/Positivo.png'
   },
   {
     nome: 'Asus',
-    imagem:'./public/imagens/Marcas/Asus.png'
+    imagem:'/public/imagens/Marcas/Asus.png'
   },
   {
     nome: 'Xing Ling Genérico',
-    imagem:'./public/imagens/Marcas/Xing.png'
+    imagem:'/public/imagens/Marcas/Xing.png'
   },
 
 ]
