@@ -65,8 +65,8 @@ const adicionaProd=(prod)=>{
   
 }
 
-const removerProduto = (nome) => {
-  setProdutos(produtos.filter(prod => prod.nome !== nome));
+const removerProduto = (id) => {
+  setProdutos(produtos.filter(prod => prod.id !== id));
 };
 
 

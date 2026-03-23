@@ -2,9 +2,9 @@ import React from "react";
 import Botao from "../Botao/Botao";
 import "./Produto.css";
 
-const Produto =({imagem,marca,nome,preco,opcao,aoRemover})=>{
+const Produto =({id,imagem,marca,nome,preco,opcao,aoRemover})=>{
     const handleRemover=()=>{
-        aoRemover(nome)
+        aoRemover(id)
     }
 
     return(

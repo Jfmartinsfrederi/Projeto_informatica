@@ -27,6 +27,7 @@ const Formulario =(props)=>{
         const marcaCompleta = props.marcas.find(m => m.nome === marca);
         props.aoProdutoCadastrado(
             {
+                "id": crypto.randomUUID(),
                 "secao":secao,
                 "marca":marcaCompleta.nome,
                 "imagem":marcaCompleta.imagem,

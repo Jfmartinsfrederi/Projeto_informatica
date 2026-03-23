@@ -12,7 +12,8 @@ const Area=(props) =>{
         <h3 className="area-titulo">{props.nome}</h3>
         <div className="grid">
             {props.produtos.map(prod=> <Produto
-            key={prod.nome}
+            key={prod.id}
+            id={prod.id}
             nome={prod.nome}
             imagem={prod.imagem}
             preco={prod.preco}
